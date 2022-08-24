@@ -1,16 +1,20 @@
-import { Box } from "@chakra-ui/react";
-import BottomSec from "./BottomSec/BottomSec";
-import TopSec from "./TopSec/TopSec";
+import { Box, Flex } from "@chakra-ui/react";
+import LeftSec from "./LeftSec/LeftSec";
+import MidSec from "./MidSec/MidSec";
+import RightSec from "./RightSec/RightSec";
 
 export default function DeskNav() {
     return(
-        <Box border='1px solid green' w='98%' m='auto'>
+        <Flex w='98%' m='auto' justifyContent='space-between' pt='15px' pb='15px'>
             <Box>
-                <TopSec/>
+                <LeftSec/>
             </Box>
             <Box>
-                <BottomSec/>
+                <MidSec/>
             </Box>
-        </Box>
+            <Box >
+                <RightSec/>
+            </Box>
+        </Flex>
     )
 };
