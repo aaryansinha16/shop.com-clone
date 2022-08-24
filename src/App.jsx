@@ -2,6 +2,7 @@ import { Box, Button, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { useState } from 'react'
 import './App.css'
 import DeskNav from './Components/Navbar/DeskNav/DeskNav'
+import AllRoutes from './Routes/AllRoutes'
 
 function App() {
 
@@ -11,19 +12,19 @@ function App() {
 
   return (
     <div className="App">
-      <Button onClick={toggleColorMode}>Toggle</Button>
+      <Box bgColor={bg}
+          boxShadow="lg"
+          p="1"
+          position="fixed"
+          width="100%"
+          top='0'
+          zIndex='100'
+          >
+            <DeskNav/>
+      </Box>
 
-        <Box borderTop="4px solid #4EA819"
-            // bgColor={bg}
-            boxShadow="lg"
-            p="1"
-            // position="fixed"
-            width="100%"
-            // top='0'
-            // zIndex='100'
-            >
-              <DeskNav/>
-        </Box>
+      <AllRoutes/>
+      <Button onClick={toggleColorMode} mt='145px'>Toggle</Button>
       
     </div>
   )
