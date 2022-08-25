@@ -34,7 +34,7 @@ export default function MidMenu() {
             </MenuButton>
             <MenuList minWidth='240px' overflowY='scroll' h='300px'>
                 <MenuOptionGroup type='radio' onChange={(e) => setMenuItem(e.toUpperCase())}>
-                    <MenuItemOption value='email'>All Departments</MenuItemOption>
+                    <MenuItemOption value='All Departments'>All Departments</MenuItemOption>
                     <MenuItemOption value='phone'>Auto</MenuItemOption>
                     <MenuItemOption value='baby'>Baby</MenuItemOption>
                     <MenuItemOption value='beauty'>Beauty</MenuItemOption>

@@ -2,10 +2,10 @@ import {Routes, Route} from 'react-router-dom'
 import Cart from './Cart'
 import CheckOut from './CheckOut'
 import Home from './Home/Home'
-import Login from './Login'
+import Login from './Login/Login'
 import PrivateRoute from './PrivateRoute'
 import Products from './Products'
-import SignUp from './SignUp'
+import SignUp from './SignUp/SignUp'
 import SingleProduct from './SingleProduct'
 
 export default function AllRoutes() {
