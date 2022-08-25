@@ -1,6 +1,7 @@
 import { Box, Button, useColorMode, useColorModeValue } from '@chakra-ui/react'
 import { useState } from 'react'
 import './App.css'
+import Footer from './Components/Footer/Footer'
 import DeskNav from './Components/Navbar/DeskNav/DeskNav'
 import AllRoutes from './Routes/AllRoutes'
 
@@ -24,7 +25,11 @@ function App() {
       </Box>
 
       <AllRoutes/>
-      <Button onClick={toggleColorMode} mt='145px'>Toggle</Button>
+      {/* <Button onClick={toggleColorMode} mt='145px'>Toggle</Button> */}
+
+      <Box w='100%'>
+        <Footer/>
+      </Box>
       
     </div>
   )

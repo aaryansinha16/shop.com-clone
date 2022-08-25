@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function TopSec() {
     return (
         <>
-        <Flex align='center' gap={2} justify="center" pb='20px' flexDir={{base: 'column', md: 'row'}}>
+        <Flex align='center' gap={2} justify="center" pt='10px' pb='10px' flexDir={{base: 'column', md: 'row'}}>
             <Text fontSize='3xl' color='#545871'>
                 $50,074,194
             </Text>

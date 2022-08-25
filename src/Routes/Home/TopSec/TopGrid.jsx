@@ -11,7 +11,7 @@ export default function TopGrid() {
     function getData(page, limit){
         getProducts(page, limit).then((res) => {
             setFourData(res.data)
-            console.log(res.data)
+            // console.log(res.data)
         })
     }
 
