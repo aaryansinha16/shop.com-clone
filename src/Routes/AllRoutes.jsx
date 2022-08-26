@@ -4,7 +4,7 @@ import CheckOut from './CheckOut'
 import Home from './Home/Home'
 import Login from './Login/Login'
 import PrivateRoute from './PrivateRoute'
-import Products from './Products'
+import Products from './Products/Products'
 import SignUp from './SignUp/SignUp'
 import SingleProduct from './SingleProduct'
 

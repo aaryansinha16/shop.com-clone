@@ -1,18 +1,42 @@
-import { Box, Button, Checkbox, Flex, Heading, Input, VStack } from "@chakra-ui/react";
+import { Box, Button, Checkbox, Flex, Heading, Input, useToast, VStack } from "@chakra-ui/react";
 import {
     FormControl,
     FormLabel,
     FormErrorMessage,
     FormHelperText,
   } from '@chakra-ui/react'
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { NavLink, useNavigate } from 'react-router-dom'
+
+// Auth Related
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { auth, registerWithEmailAndPassword, signInWithGoogle } from "../../Authentication/firebase";
+
 
 export default function SignUp() {
     const [input, setInput] = useState('')
-
     const handleInputChange = (e) => setInput(e.target.value)
-
     const isError = input === ''
+
+    const [lname, setLName] = useState('')
+    // Desktime fireBase signup part
+    const toast = useToast()
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [fname, setFName] = useState("");
+    const [user, loading, error] = useAuthState(auth);
+    const navigate = useNavigate();
+    const register = () => {
+        // if (!name) alert("Please enter name");
+        registerWithEmailAndPassword(fname, email, password , toast);
+    };
+    useEffect(() => {
+        if (loading) return;
+        // if (user) navigate("/");
+    }, [user, loading]);
+
+
+
     return (
         <Box mt='200px'  w='100%' mb='100px'>
             <Box w={['95%','95%', '90%' , '60%']} m='auto' color='#202340' >
@@ -26,8 +50,8 @@ export default function SignUp() {
                         <FormLabel fontSize='14px'>First Name*</FormLabel>
                         <Input
                             type='text'
-                            value={input}
-                            onChange={handleInputChange}
+                            value={fname}
+                            onChange={(e) => setFName(e.target.value)}
                             placeholder="First name here"
                         />
                         {!isError &&  (
@@ -38,8 +62,8 @@ export default function SignUp() {
                         <FormLabel fontSize='14px'>Last Name*</FormLabel>
                         <Input
                             type='text'
-                            value={input}
-                            onChange={handleInputChange}
+                            value={lname}
+                            onChange={(e) => setLName(e.target.value)}
                             placeholder="Last name here"
                         />
                         {!isError &&  (
@@ -52,8 +76,8 @@ export default function SignUp() {
                         <FormLabel fontSize='14px'>Email Address*</FormLabel>
                         <Input
                             type='email'
-                            value={input}
-                            onChange={handleInputChange}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="Email address here"
                         />
                         {!isError &&  (
@@ -66,9 +90,8 @@ export default function SignUp() {
                         <FormLabel fontSize='14px'>Password*(Atleast 7 characters)</FormLabel>
                         <Input
                             type='Password'
-                            value={input}
-                            onChange={handleInputChange}
-                            placeholder="First name here"
+                            // onChange={handleInputChange}
+                            placeholder="Password here"
                         />
                         {!isError &&  (
                             <FormErrorMessage fontSize='14px'>Password is required.</FormErrorMessage>
@@ -78,8 +101,8 @@ export default function SignUp() {
                         <FormLabel fontSize='14px'>Confirm Password*</FormLabel>
                         <Input
                             type='password'
-                            value={input}
-                            onChange={handleInputChange}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             placeholder="Confirm Password here"
                         />
                         {!isError &&  (
@@ -118,7 +141,7 @@ export default function SignUp() {
 
                 <Flex w='45%' justify='flex-start' mt='25px'>
                     <FormControl>
-                        <Button bg='#414467' color='white'>Create your new Account</Button>
+                        <Button bg='#414467' color='white' onClick={register}>Create your new Account</Button>
                         <FormHelperText fontSize='14px'>By creating an account, you are agreeing to our Terms of Service and Privacy Policy.</FormHelperText>
                     </FormControl>
                 </Flex>

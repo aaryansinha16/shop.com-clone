@@ -10,8 +10,29 @@ import {
     Stack,
     Image,
   } from '@chakra-ui/react';
+
+// Auth Imports -> 
+import { NavLink, useNavigate} from 'react-router-dom'
+import { auth, logInWithEmailAndPassword, signInWithGoogle } from '../../Authentication/firebase'
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { useEffect, useState } from 'react';
+// <--Ends-->
   
   export default function Login() {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [user, loading, error] = useAuthState(auth);
+    const navigate = useNavigate();
+    useEffect(() => {
+        if (loading) {
+        // maybe trigger a loading screen
+        return;
+        }
+        if (user) navigate("/");
+    }, [user, loading]);
+
+
     return (
       <Stack mt='150px' minH={'80vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
@@ -19,11 +40,11 @@ import {
             <Heading fontSize={'2xl'}>Sign in to your account</Heading>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
-              <Input type="email" />
+              <Input type="email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             </FormControl>
             <FormControl id="password">
               <FormLabel>Password</FormLabel>
-              <Input type="password" />
+              <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
             </FormControl>
             <Stack spacing={6}>
               <Stack
@@ -33,7 +54,7 @@ import {
                 <Checkbox>Remember me</Checkbox>
                 <Link color={'blue.500'}>Forgot password?</Link>
               </Stack>
-              <Button colorScheme={'blue'} variant={'solid'}>
+              <Button colorScheme={'blue'} variant={'solid'} onClick={() => logInWithEmailAndPassword(auth, email, password)}>
                 Sign in
               </Button>
             </Stack>

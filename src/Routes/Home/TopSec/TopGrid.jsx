@@ -30,10 +30,10 @@ export default function TopGrid() {
          minChildWidth='200px' 
          placeItems='center' 
          gap={5} 
-         w='95%' 
+         w='95%'
          m='auto'>
             
-            <VStack spacing={4} w='100%' alignItems='flex-start' boxShadow='lg' p={4} bg='white'>
+            <VStack spacing={4} w='100%' alignItems='flex-start' boxShadow='lg' p={4} bg='white' h='100%'>
                 <Text fontSize='20px'>Recently Viewed</Text>
                 <SimpleGrid
                  gap={3} 
@@ -42,7 +42,7 @@ export default function TopGrid() {
                     {
                         fourData?.map((item) => (
                             <Box backgroundColor='#F0F1F7' p='2' textAlign='center' key={item.id}>
-                                <Image src={item.image}/>
+                                <Image src="https://burst.shopifycdn.com/photos/hipster-enamel-pin-hat.jpg?width=373&format=pjpg&exif=1&iptc=1"/>
                                 <Text> <Link to={`/singleProduct/:${item.id}`}> {item.name} </Link></Text>
                             </Box>
                         ))
@@ -57,7 +57,7 @@ export default function TopGrid() {
                     fourData.length > 2 &&
                     (
                         <>
-                    <Image src={fourData[0].image}/>
+                    <Image src="https://burst.shopifycdn.com/photos/wooden-toothbrushes-lined-on-bright-pink-background.jpg?width=373&format=pjpg&exif=1&iptc=1" h='100%'/>
                     <Text><Link to={`/singleProduct/${fourData[0].id}`}>{fourData[0].name}</Link></Text>
                     </>)
                 }
@@ -71,7 +71,7 @@ export default function TopGrid() {
                         // console.log(prod)
                         <Box  w='80%' >
                         <Link to={`/singleProduct/:${prod.id}`} border='1px solid black'>
-                        <Image src={prod.image} key={prod.id} h='80px' w='100%' />
+                        <Image src="https://burst.shopifycdn.com/photos/white-phone-charger-on-yellow.jpg?width=373&format=pjpg&exif=1&iptc=1" key={prod.id} h='80px' w='100%' />
                         </Link>
                         </Box>
                     ))
@@ -88,7 +88,7 @@ export default function TopGrid() {
                         // console.log(prod)
                         <Box  w='80%' >
                         <Link to={`/singleProduct/:${prod.id}`} border='1px solid black'>
-                        <Image src={prod.image} key={prod.id} h='80px' w='100%' />
+                        <Image src="https://burst.shopifycdn.com/photos/black-headphones-closeup.jpg?width=373&format=pjpg&exif=1&iptc=1" key={prod.id} h='80px' w='100%' />
                         </Link>
                         </Box>
                     ))
