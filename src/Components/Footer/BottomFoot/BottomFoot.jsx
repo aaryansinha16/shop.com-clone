@@ -2,7 +2,7 @@ import { Box, Image, SimpleGrid } from "@chakra-ui/react";
 
 export default function BottomFoot() {
     return(
-        <Box w={['95%','90%','80%','50%']} m='auto' mt='20px' pb={8}>
+        <Box w={['90%','90%','80%','50%']} m='auto' mt='20px' pb={8}>
         <SimpleGrid minChildWidth='60px' placeItems='center' gap={1}>
             <Image src="https://www.shop.com/feo-cdn/7/F/BIyWLz__s.webp" w='75px'/>
             <Image src="https://www.shop.com/feo-cdn/B/L/K5pf_0c94.webp" w='75px'/>

@@ -7,7 +7,7 @@ import {FaFacebookF, FaTwitter, FaPinterestP} from 'react-icons/fa'
 export default function TopFoot() {
     return(
         <VStack pt='10px' pb='10px' pl={4} pr={4} spacing={7}>
-            <Flex justify='space-between' w='100%' align='center' >
+            <Flex justify='space-between' w='100%' align='center' flexDir={{base:'column', lg:'row'}}>
                 <Flex align='center' gap={6}>
                     <Text fontSize='13px' fontWeight='semibold' color='white'>Get Email Deals & Earn Cashback</Text>
                     <HStack spacing={0}>
@@ -22,7 +22,7 @@ export default function TopFoot() {
             </Flex>
 
             <Flex w='100%' justify='space-between' align='center'>
-                <Flex fontSize='12px' fontWeight='semibold' color='white' gap={4}>
+                <Flex fontSize='12px' fontWeight='semibold' color='white' gap={4} flexDir={{base:'column', lg:'row'}}>
                     <Link to='/'><Text>About Us</Text></Link>
                     <Link to='/'><Text>Help</Text></Link>
                     <Link to='/'><Text>Accessibility Statement</Text></Link>
