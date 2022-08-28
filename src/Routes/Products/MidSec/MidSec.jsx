@@ -1,4 +1,4 @@
-import { Box, Flex, SimpleGrid, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, SimpleGrid, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { getProducts, getTotalPages } from "../../../API/api";
 import PaginationComponent from "../../../Components/Pagination/PaginationComponent";
@@ -26,8 +26,13 @@ export default function MidSec({data, page, setPage}) {
                     ))
                 }
             </SimpleGrid>
-            <Box m='auto' mt='20px'>
-                <PaginationComponent currentPage={page} totalPages={totalPages} setPage={setPage}/>
+            <Box m='auto' mt='20px' display={{base:'none', lg:'block'}}>
+                <PaginationComponent currentPage={page} totalPages={totalPages} setPage={setPage} />
+            </Box>
+            <Box display={{ lg:'none'}} m='auto'>
+                <Button onClick={() => setPage(page-1)}>Prev</Button>
+                {page}
+                <Button onClick={() => setPage(page+1)}>Next</Button>
             </Box>
         </Flex>
     )

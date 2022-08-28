@@ -29,12 +29,12 @@ import { useEffect, useState } from 'react';
         // maybe trigger a loading screen
         return;
         }
-        if (user) navigate("/products");
+        if (user) navigate("/checkout");
     }, [user, loading]);
 
 
     return (
-      <Stack mt='140px' minH={'80vh'} direction={{ base: 'column', md: 'row' }}>
+      <Stack mt={{base:'150px', xl:'140px'}} minH={'80vh'} direction={{ base: 'column', md: 'row' }}>
         <Flex p={8} flex={1} align={'center'} justify={'center'}>
           <Stack spacing={4} w={'full'} maxW={'md'}>
             <Heading fontSize={'2xl'}>Sign in to your account</Heading>

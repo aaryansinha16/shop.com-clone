@@ -75,7 +75,7 @@ const logInWithEmailAndPassword = async (auth,email, password) => {
 };
 
 
-const registerWithEmailAndPassword = async (name, email, password, toast) => {
+const registerWithEmailAndPassword = async (name, email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
@@ -85,25 +85,10 @@ const registerWithEmailAndPassword = async (name, email, password, toast) => {
       authProvider: "local",
       email,
     })
-    toast({
-        title: 'Account created.',
-        description: "We've created your account for you.",
-        status: 'success',
-        duration: 9000,
-        isClosable: true,
-        position: 'top'
-      })
   }
   catch (err) {
+    alert(err.message)
     console.error(err);
-    toast({
-        title: 'Email used.',
-        description: "Entered email already used, use another one.",
-        status: 'error',
-        duration: 9000,
-        isClosable: true,
-        position: 'top'
-      })
   }
 };
 
@@ -116,7 +101,7 @@ const sendPasswordReset = async (auth,email) => {
     console.error(err);
     alert(err.message);
   }
-};
+};  
 
 
 const logout = () => {

@@ -87,14 +87,14 @@ export default function SignLogDrawer() {
                         <VStack align='flex-start' spacing={3}>
                             <Text mb='15px' pl={6} fontSize='lg' textAlign='left'>Your shop consultant is <Link to='#'><b>SHOP corporate services</b></Link></Text>
 
-                            <Link to='/signup' style={{width: '100%'}}><Button variant='ghost' w='100%' justifyContent='flex-start' fontSize='14px' alignItems='center' pl={6} leftIcon={<CgProfile fontSize='22px'/>} onClick={onClose}> SignUp</Button></Link>
+                            <Link to='/login' style={{width: '100%'}}><Button variant='ghost' w='100%' justifyContent='flex-start' fontSize='14px' alignItems='center' pl={6} leftIcon={<CgProfile fontSize='22px'/>} onClick={onClose}> Login</Button></Link>
                             <Button variant='ghost' w='100%' justifyContent='flex-start' fontSize='14px' alignItems='center' pl={6} leftIcon={<FaTruckMoving fontSize='22px'/>}>Track Orders</Button>
                             <Button variant='ghost' w='100%' justifyContent='flex-start' fontSize='14px' alignItems='center' pl={6} leftIcon={<FiRotateCcw fontSize='22px'/>}>Reorder Items</Button>
                             <Button variant='ghost' w='100%' justifyContent='flex-start' fontSize='14px' alignItems='center' pl={6} leftIcon={<AiFillDollarCircle fontSize='22px'/>}>Cashback programe</Button>
                             <Button variant='ghost' w='100%' justifyContent='flex-start' fontSize='14px' alignItems='center' pl={6} leftIcon={<QuestionOutlineIcon fontSize='22px'/>}>Help</Button>
                             {
                                 user ? (<Button variant='ghost' w='100%' justifyContent='flex-start' fontSize='14px' alignItems='center' pl={6} leftIcon={<BsFillPersonPlusFill fontSize='22px'/>} onClick={() => logout()}>Logout</Button>):
-                                (<Button variant='ghost' w='100%' justifyContent='flex-start' fontSize='14px' alignItems='center' pl={6} leftIcon={<BsFillPersonPlusFill fontSize='22px'/>}>Create Account</Button>)
+                                (<Link to='/signup' style={{width: '100%'}}><Button variant='ghost' w='100%' justifyContent='flex-start' fontSize='14px' alignItems='center' pl={6} leftIcon={<BsFillPersonPlusFill fontSize='22px'/>}>Create Account</Button></Link>)
                             }
                             <Button variant='ghost' w='100%' justifyContent='flex-start' fontSize='14px' alignItems='center' pl={6} leftIcon={<CgProfile fontSize='22px'/>}>My Account</Button>
 

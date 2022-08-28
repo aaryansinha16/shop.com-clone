@@ -51,15 +51,15 @@ export default function Products() {
             <Divider borderColor='gray.400'/>
 
             <Flex mt='30px' mb='30px'  >
-                <Box w='20%' borderRight='1px solid' borderColor='gray.300'>
+                <Box w='15%' borderRight='1px solid' borderColor='gray.300'>
                     <LeftSec data={data}/>
                 </Box>
 
-                <Box w='65%' >
+                <Box w={{base:'80%', xl:'65%'}} >
                     <MidSec data={data} page={page} setPage={setPage}/>
                 </Box>
 
-                <Box w='15%' >
+                <Box w='15%' display={{base: 'none', xl:'block'}}>
                     <RightSec/>
                 </Box>
             </Flex>

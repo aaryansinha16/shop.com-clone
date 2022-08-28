@@ -26,7 +26,7 @@ function App() {
             <DeskNav/>
       </Box>
 
-      <Box w='95%' display={{xl: 'none'}} m='auto' mb='-150px' p={6} bg={bg}>
+      <Box w='100%' display={{xl: 'none'}} m='auto' mb='-150px' p={6} bg={bg}>
         <RespNav/>
       </Box>
 

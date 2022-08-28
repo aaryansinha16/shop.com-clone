@@ -30,10 +30,11 @@ export default function SignUp() {
     const register = () => {
         // if (!name) alert("Please enter name");
         registerWithEmailAndPassword(fname, email, password , toast);
+        // navigate('/checkout')
     };
     useEffect(() => {
         if (loading) return;
-        // if (user) navigate("/");
+        if (user) navigate("/checkout");
     }, [user, loading]);
 
 

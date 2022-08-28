@@ -8,7 +8,7 @@ export default function TopFoot() {
     return(
         <VStack pt='10px' pb='10px' pl={4} pr={4} spacing={7}>
             <Flex justify='space-between' w='100%' align='center' flexDir={{base:'column', lg:'row'}}>
-                <Flex align='center' gap={6}>
+                <Flex align='center' gap={6} flexDir={{base:'column', lg:'row'}}>
                     <Text fontSize='13px' fontWeight='semibold' color='white'>Get Email Deals & Earn Cashback</Text>
                     <HStack spacing={0}>
                         <Input type='email' placeholder="Enter Email Address" size='sm' bg='whiteAlpha'/>
@@ -33,7 +33,7 @@ export default function TopFoot() {
                     <Link to='/'><Text>Connect</Text></Link>
                     <Link to='/'><Text>Own your own SHOP site</Text></Link>
                 </Flex>
-                <Flex gap={3}>
+                <Flex gap={3} flexDir={{base:'column', lg:'row'}}>
                     <IoMdMail style={{color:'white'}}/>
                     <FaFacebookF style={{color:'white'}}/>
                     <FaTwitter style={{color:'white'}}/>

@@ -27,12 +27,14 @@ export default function TopSec() {
                 </Button>
             </Flex>
         </Flex>
-        <Image src='https://img.shop.com/Image/resources/homepage/30_Anniversary_Banner.png' w='100%'/>
-        <Image
-         src='https://img.shop.com/Image/homepage/shop-usa-101082-extra-cashback-hero1660162712272.jpg'
-         w='100%'
-         mt='20px'
-         mb='20px'/>
+        <Link to='/products'><Image src='https://img.shop.com/Image/resources/homepage/30_Anniversary_Banner.png' w='100%'/></Link>
+        <Link to='/products'>
+            <Image
+                src='https://img.shop.com/Image/homepage/shop-usa-101082-extra-cashback-hero1660162712272.jpg'
+                w='100%'
+                mt='20px'
+                mb='20px'/>
+         </Link>
         </>
     )
 };
