@@ -5,7 +5,7 @@ import RightSec from "./RightSec/RightSec";
 
 export default function DeskNav() {
     return(
-        <Flex w='98%' m='auto' justifyContent='space-between' pt='15px' pb='15px'>
+        <Flex w='98%' m='auto' justifyContent='space-between' pt='15px' pb='15px' >
             <Box>
                 <LeftSec/>
             </Box>
