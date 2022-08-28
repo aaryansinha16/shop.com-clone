@@ -23,25 +23,25 @@ export default function MidSec() {
             </Flex> 
             <Flex gap={5} >
                 <Box >
-                    <Link to='/'>Exclusive Brands</Link>
+                    <Link to='/products'>Exclusive Brands</Link>
                 </Box>
                 <Box>
-                    <Link  to='/'>Stores</Link>
+                    <Link  to='/products'>Stores</Link>
                 </Box>
                 <Box>
-                    <Link to='/' >Deals</Link>
+                    <Link to='/products' >Deals</Link>
                 </Box>
                 <Box>
-                    <Link  to='/'>SHOP travel</Link>
+                    <Link  to='/products'>SHOP travel</Link>
                 </Box>
                 <Box>
-                    <Link  to='/'>Departments</Link>
+                    <Link  to='/products'>Departments</Link>
                 </Box>
                 <Box>
-                    <Link  to='/'>ShopBuddy</Link>
+                    <Link  to='/products'>ShopBuddy</Link>
                 </Box>
                 <Box>
-                    <Link  to='/'>SHOP Local</Link>
+                    <Link  to='/products'>SHOP Local</Link>
                 </Box>
             </Flex>
         </VStack>

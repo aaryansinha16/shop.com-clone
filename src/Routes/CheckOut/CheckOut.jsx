@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, HStack, Text, useToast, VStack } from "@chakra-ui/react";
 import { useContext, useEffect, useState } from "react";
 import { Divider } from "semantic-ui-react";
 import { AppContext } from "../../contexts/AppContext";
@@ -18,6 +18,20 @@ export default function CheckOut() {
     useEffect(() => {
         setCartTotal(sum)
     }, [sum])
+
+    const toast = useToast()
+    const handlePayment = (sum) => {
+        setTimeout(() => {
+            // alert('Payment Successfull!!')
+            toast({
+                title: `Payment Successfull!! of $${sum}`,
+                description: "You've successfully paid the required amount.",
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+              })
+        }, 3000)
+    }
 
     return (
         <VStack w='95%' m='auto' mt='180px' mb='100px' color='#202340'>
@@ -50,6 +64,7 @@ export default function CheckOut() {
                         border='1px solid black' 
                         _hover={{bg:'#202340', color:'white'}} 
                         p='3'
+                        onClick={() => handlePayment(sum)}
                         >
                             Proceed to Payments
                     </Button>

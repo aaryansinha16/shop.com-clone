@@ -9,12 +9,14 @@ import {
     chakra,
     Tooltip,
     IconButton,
+    useToast,
   } from '@chakra-ui/react';
 import { useContext } from 'react';
   import { BsStar, BsStarFill, BsStarHalf } from 'react-icons/bs';
   import { FiShoppingCart } from 'react-icons/fi';
 import { addToCart } from '../../API/api';
 import { AppContext } from '../../contexts/AppContext';
+import {Link} from 'react-router-dom'
   
   // interface RatingProps {
   //   rating: number;
@@ -64,7 +66,7 @@ import { AppContext } from '../../contexts/AppContext';
   }) {
 
     const {handleAddCart} = useContext(AppContext)
-
+    
     return (
       <Flex p={3}  w='98%' alignItems="center" justifyContent="center" >
         <Box
@@ -76,16 +78,18 @@ import { AppContext } from '../../contexts/AppContext';
           _hover={{boxShadow: '2xl'}}>
           {available && (
             <Circle
-              size="10px"
-              bg="red.200"
+            size="10px"
+            bg="red.200"
             />
-          )}
+            )}
   
+          <Link to={`/products/${id}`}>
           <Image
             src="https://burst.shopifycdn.com/photos/set-of-custom-enamel-pins.jpg?width=373&format=pjpg&exif=1&iptc=1"
             alt={`Picture of ${name}`}
             roundedTop="lg"
-          />
+            />
+          </Link>
   
           <Box p="6">
             <Box d="flex" alignItems="baseline">
@@ -110,7 +114,9 @@ import { AppContext } from '../../contexts/AppContext';
                 placement={'top'}
                 color={'gray.800'}
                 fontSize={'0.8em'}>
-                <IconButton onClick={() => handleAddCart(name, brand,price, description ,rating ,number_of_reviews,available, image)} variant='outline' size='lg' icon={<FiShoppingCart h={9} w={9} alignSelf={'center'}/>}/>
+                <IconButton onClick={() => {
+                  handleAddCart(name, brand,price, description ,rating ,number_of_reviews,available, image)
+                  }} variant='outline' size='lg' icon={<FiShoppingCart h={9} w={9} alignSelf={'center'}/>}/>
               </Tooltip>
             </Flex>
   
@@ -120,7 +126,7 @@ import { AppContext } from '../../contexts/AppContext';
                 <Box as="span" color={'gray.600'} fontSize="lg">
                   $
                 </Box>
-                {price}
+                {price}.00
               </Box>
             </Flex>
           </Box>
